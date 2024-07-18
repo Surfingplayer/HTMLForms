@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+   <style>
+     body {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg');
+            background-size: 250vh;;
+        }
+        .login-container {
+            background-color: #f7f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+   </style>
+     <script>
+       
+        function populateCities() {
+           
+            var stateSelect = document.getElementById("state");
+            var citiesSelect = document.getElementById("cities");
+
+           
+            citiesSelect.innerHTML = '';
+
+            
+            var stateValue = stateSelect.value;
+
+            
+            var cities = [];
+
+            switch (stateValue) {
+                case "AP": // Andhra Pradesh
+                    cities = ["Visakhapatnam", "Vijayawada", "Guntur", "Nellore", "Kurnool", "Rajahmundry", "Tirupati", "Kadapa"];
+                    break;
+                case "AR": // Arunachal Pradesh
+                    cities = ["Itanagar", "Naharlagun"];
+                    break;
+                case "AS": // Assam
+                    cities = ["Guwahati", "Silchar", "Dibrugarh", "Jorhat", "Nagaon", "Tezpur"];
+                    break;
+                case "BR": // Bihar
+                    cities = ["Patna", "Gaya", "Bhagalpur", "Muzaffarpur", "Purnia", "Darbhanga"];
+                    break;
+                case "CT": // Chhattisgarh
+                    cities = ["Raipur", "Bhilai", "Bilaspur", "Korba", "Raigarh", "Durg"];
+                    break;
+                case "GA": // Goa
+                    cities = ["Panaji", "Margao", "Vasco da Gama", "Mapusa", "Ponda"];
+                    break;
+                case "HR": // Haryana
+                    cities = ["Faridabad", "Gurgaon", "Panipat", "Ambala", "Hisar", "Karnal"];
+                    break;
+                case "HP": // Himachal Pradesh
+                    cities = ["Shimla", "Solan", "Dharamshala", "Mandi", "Kullu", "Palampur"];
+                    break;
+                case "JK": // Jammu and Kashmir
+                    cities = ["Srinagar", "Jammu", "Anantnag", "Baramulla", "Kathua", "Udhampur"];
+                    break;
+                case "JH": // Jharkhand
+                    cities = ["Ranchi", "Jamshedpur", "Dhanbad", "Bokaro", "Deoghar", "Hazaribagh"];
+                    break;
+                case "KA": // Karnataka
+                    cities = ["Bangalore", "Mysore", "Hubli", "Mangalore", "Belgaum", "Gulbarga"];
+                    break;
+                case "KL": // Kerala
+                    cities = ["Thiruvananthapuram", "Kochi", "Kollam", "Kottayam", "Thrissur", "Kozhikode", "Alappuzha", "Palakkad", "Malappuram", "Kannur", "Kasaragod", "Wayanad", "Idukki", "Pathanamthitta"];
+                    break;
+                case "MP": // Madhya Pradesh
+                    cities = ["Indore", "Bhopal", "Jabalpur", "Gwalior", "Ujjain", "Sagar"];
+                    break;
+                case "MH": // Maharashtra
+                    cities = ["Mumbai", "Pune", "Nagpur", "Nashik", "Thane", "Aurangabad"];
+                    break;
+                case "MN": // Manipur
+                    cities = ["Imphal"];
+                    break;
+                case "ML": // Meghalaya
+                    cities = ["Shillong"];
+                    break;
+                case "MZ": // Mizoram
+                    cities = ["Aizawl"];
+                    break;
+                case "NL": // Nagaland
+                    cities = ["Kohima"];
+                    break;
+                case "OR": // Odisha
+                    cities = ["Bhubaneswar", "Cuttack", "Rourkela", "Berhampur", "Sambalpur", "Puri"];
+                    break;
+                case "PB": // Punjab
+                    cities = ["Ludhiana", "Amritsar", "Jalandhar", "Patiala", "Bathinda", "Mohali"];
+                    break;
+                case "RJ": // Rajasthan
+                    cities = ["Jaipur", "Jodhpur", "Udaipur", "Kota", "Bikaner", "Ajmer"];
+                    break;
+                case "SK": // Sikkim
+                    cities = ["Gangtok"];
+                    break;
+                case "TN": // Tamil Nadu
+                    cities = ["Chennai", "Coimbatore", "Madurai", "Tiruchirappalli", "Salem", "Tirunelveli"];
+                    break;
+                case "TG": // Telangana
+                    cities = ["Hyderabad", "Warangal", "Nizamabad", "Karimnagar", "Ramagundam", "Khammam"];
+                    break;
+                case "TR": // Tripura
+                    cities = ["Agartala"];
+                    break;
+                case "UT": // Uttarakhand
+                    cities = ["Dehradun", "Haridwar", "Roorkee", "Haldwani", "Rudrapur", "Kashipur"];
+                    break;
+                case "UP": // Uttar Pradesh
+                    cities = ["Lucknow", "Kanpur", "Agra", "Varanasi", "Meerut", "Allahabad"];
+                    break;
+                case "WB": // West Bengal
+                    cities = ["Kolkata", "Howrah", "Durgapur", "Asansol", "Siliguri", "Bardhaman"];
+                    break;
+                case "AN": // Andaman and Nicobar Islands
+                    cities = ["Port Blair"];
+                    break;
+                case "CH": // Chandigarh
+                    cities = ["Chandigarh"];
+                    break;
+                case "DN": // Dadra and Nagar Haveli
+                    cities = ["Silvassa"];
+                    break;
+                case "DD": // Daman and Diu
+                    cities = ["Daman", "Diu"];
+                    break;
+                case "DL": // Delhi
+                    cities = ["New Delhi"];
+                    break;
+                case "LD": // Lakshadweep
+                    cities = ["Kavaratti"];
+                    break;
+                case "PY": // Puducherry
+                    cities = ["Puducherry", "Karaikal", "Mahe", "Yanam"];
+                    break;
+                default:
+                    cities = ["Select City"];
+                    break;
+            }
+
+            // Populate cities select with options
+            cities.forEach(function(city) {
+                var option = document.createElement("option");
+                option.text = city;
+                option.value = city.toLowerCase(); // Setting value to lowercase
+                citiesSelect.add(option);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Registration Form</h2>
+        <hr>
+        <form action="" id="registrationForm">
+            <table>
+                <tr>
+                    <td>
+                        <label for="fname"><span style="color: red;">*</span>Name:</label>
+                        <input type="text" id="fname" placeholder="First Name">
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span id="nameError"style="font-size: small;"></span>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email"><span style="color: red;">*</span>Email:</label>
+                        <input type="email" id="email" placeholder="@gmail.com">
+                       
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span id="emailError"style="font-size: small;"></span>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <label for="phoneNumber"><span style="color: red;">*</span>Phone:</label>
+                        <input type="text" id="phoneNumber" minlength="10" maxlength="10">
+                       
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span id="numberError" style="font-size: small;"></span>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                       <label><span style="color: red;">*</span>Gender:</label>
+                        <input type="radio" id="male" name="gender" value="Male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="Female">
+                        <label for="female">Female</label>
+                        <input type="radio" id="other" name="gender" value="Other">
+                        <label for="other">Other</label>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span id="genderError"style="font-size: small;"></span>
+                    </td>
+                    
+                </tr>
+                <tr>    
+                    <td>
+                        <label for="address">Address:</label><br>
+                        <textarea name="address" id="address" style="min-width: 300px; max-width: 300px; max-height: 100px; min-height: 100px;"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <td>
+                        <label for="state">State:</label>
+                    <select id="state" onchange="populateCities()">
+                        <option value="0" selected disabled>Select State</option>
+                        <option value="AP">Andhra Pradesh</option>
+                        <option value="AR">Arunachal Pradesh</option>
+                        <option value="AS">Assam</option>
+                        <option value="BR">Bihar</option>
+                        <option value="CT">Chhattisgarh</option>
+                        <option value="GA">Goa</option>
+                        <option value="HR">Haryana</option>
+                        <option value="HP">Himachal Pradesh</option>
+                        <option value="JK">Jammu and Kashmir</option>
+                        <option value="JH">Jharkhand</option>
+                        <option value="KA">Karnataka</option>
+                        <option value="KL">Kerala</option>
+                        <option value="MP">Madhya Pradesh</option>
+                        <option value="MH">Maharashtra</option>
+                        <option value="MN">Manipur</option>
+                        <option value="ML">Meghalaya</option>
+                        <option value="MZ">Mizoram</option>
+                        <option value="NL">Nagaland</option>
+                        <option value="OR">Odisha</option>
+                        <option value="PB">Punjab</option>
+                        <option value="RJ">Rajasthan</option>
+                        <option value="SK">Sikkim</option>
+                        <option value="TN">Tamil Nadu</option>
+                        <option value="TG">Telangana</option>
+                        <option value="TR">Tripura</option>
+                        <option value="UT">Uttarakhand</option>
+                        <option value="UP">Uttar Pradesh</option>
+                        <option value="WB">West Bengal</option>
+                        <option value="AN">Andaman and Nicobar Islands</option>
+                        <option value="CH">Chandigarh</option>
+                        <option value="DN">Dadra and Nagar Haveli</option>
+                        <option value="DD">Daman and Diu</option>
+                        <option value="DL">Delhi</option>
+                        <option value="LD">Lakshadweep</option>
+                        <option value="PY">Puducherry</option>
+                    </select>
+                        
+
+
+                    <label for="cities">City:</label>
+                <select name="cities" id="cities" style="width: 150px;">
+                    <option value="0" selected disabled>Select City</option>
+                </select>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password">
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <span id="passwordError"style="font-size: small;"> </span>
+                    </td>
+                    
+                </tr>
+            </table>
+            <div style="display: flex; justify-content: center;">
+                <input style=" background-color:  #b70303; border-radius: 10px; color: white; width:100px; height: 30px; " type="submit" value="Submit">
+            </div>
+           <div>
+            <hr>
+            <button style=" background-color:  #b70303; border-radius: 10px;  width:100px; height: 30px; "><a href="LoginPage.html" style="color: white;">Back to Login</a></button>
+           </div>
+        </form>
+    </div>
+   
+</body>
+<script type="text/javascript" src="formValidation.js"></script>
+</html>
